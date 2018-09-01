@@ -4,8 +4,8 @@ Hear me helps bring your voice assistant idea to life. You can create an Alexa s
 
 ## You will need:
 - Laptop (Mac, Windows, or Linux)
-- (Amazon Web Services Account)[https://aws.amazon.com/]
-- (Amazon Developer Portal Account)[https://developer.amazon.com/]
+- [Amazon Web Services Account](https://aws.amazon.com/)
+- [Amazon Developer Portal Account](https://developer.amazon.com/)
 
 ## This kit contains:
 - Example game Alexa skill
