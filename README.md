@@ -16,6 +16,8 @@ Hear me helps bring your voice assistant idea to life. You can create an Alexa s
 ### Game Alexa skill
 Objective: Be able to play Duck Duck Goose, Peekaboo, or Marco Polo
 1. Via the Amazon Web Services Console, create a lambda function called gameSkill in python or Node.JS
+    - For Role, select "Create new role from template(s)" and enter "alexaSkill" for Role Name and from Policy templates list, select "Simple Microservice permissions"
+    - Under "Designer->add triggers" select "Alexa Skills Kit" 
 2. Via the Amazon Developer Portal, create a skill called kidsGames
     - Intents
         - DuckDuckGooseIntent
@@ -24,7 +26,8 @@ Objective: Be able to play Duck Duck Goose, Peekaboo, or Marco Polo
             - play peek a boo
         - MarcoPoloIntent
             - play Marco
-        
+    - Endpoint
+        - Copy ARN from "gameSkill" lambda function (e.g. arn:aws:lambda:us-east-1:596304525112:function:gameSkill)
 ### Poem Reading Alexa skill (call a web service example)
 Objective: Be able to call a web service and read a poem
 1. Via the Amazon Web Services Console, create a lambda function called poemSkill in python or Node.JS
