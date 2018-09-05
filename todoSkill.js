@@ -1,4 +1,7 @@
 'use strict';
+const AWS = require('aws-sdk')
+AWS.config.update({region: 'us-east-1'});
+const dynamodb = new AWS.DynamoDB({apiVersion: '2012-10-08'})
 
 // A sample Alexa skill for playing kids games
 
@@ -40,11 +43,10 @@ function getWelcomeResponse(callback) {
     // If we wanted to initialize the session to have some attributes we could add those here.
     const sessionAttributes = {};
     const cardTitle = 'Welcome';
-    const speechOutput = 'Welcome to kids games. ' +
-        'Please say play Duck Duck, Peekaboo, or Marco';
+    const speechOutput = "Welcome to Million Things. Please add a to do by saying save my thing to get done or get all to do's by saying what are my things to get done.";
     // If the user either does not reply to the welcome message or says something that is not
     // understood, they will be prompted again with this text.
-    const repromptText = 'Please say play Duck Duck, Peekaboo, or Marco.';
+    const repromptText = "Please add a to do by saying save my thing to get done or get all to do's by saying what are my things to get done.";
     const shouldEndSession = false;
 
     callback(sessionAttributes,
@@ -53,7 +55,7 @@ function getWelcomeResponse(callback) {
 
 function handleSessionEndRequest(callback) {
     const cardTitle = 'Session Ended';
-    const speechOutput = 'Thank you for playing. Have a nice day!';
+    const speechOutput = 'Thank you for using Million Things.';
     // Setting this to true ends the session and exits the skill.
     const shouldEndSession = true;
 
@@ -90,12 +92,10 @@ function onIntent(intentRequest, session, callback) {
     const intentName = intentRequest.intent.name;
 
     // Dispatch to your skill's intent handlers
-    if (intentName === 'DuckDuckGooseIntent') {
-        callback(sessionAttributes, buildSpeechletResponse(intent.name, "Goose", null, false));
-    } else if (intentName === 'PeekabooIntent') {
-        callback(sessionAttributes, buildSpeechletResponse(intent.name, "I see you", null, false));
-    } else if (intentName === 'MarcoPoloIntent'){
-        callback(sessionAttributes, buildSpeechletResponse(intent.name, "Polo", null, false));
+    if (intentName === 'GetTodo') {
+        getTodos(intent, session, callback);
+    } else if (intentName === 'SaveTodo') {
+        saveTodo(intent, session, callback)
     } else if (intentName === 'AMAZON.HelpIntent') {
         getWelcomeResponse(callback);
     } else if (intentName === 'AMAZON.StopIntent' || intentName === 'AMAZON.CancelIntent') {
@@ -103,6 +103,46 @@ function onIntent(intentRequest, session, callback) {
     } else {
         throw new Error('Invalid intent');
     }
+}
+
+function saveTodo(intent, session, callback){
+    var params = {
+        TableName: 'todos',
+        Item: {
+            'todo-id': {S: intent['slots']['todo']['value']}
+        }
+    };
+    dynamodb.putItem(params, function(err, data){
+        if (err) {
+            console.log("Error", err);
+        } else{
+            callback({}, buildSpeechletResponse(intent.name, "To do saved", null, false));
+        }
+    });
+}
+
+function getTodos(intent, session, callback){
+    var todos = "";
+    var params = {
+        TableName: 'todos'
+    }
+    dynamodb.scan(params, function(err, data){
+        if (err) {
+            console.log("Error", err);
+        } else{
+            var todoCount = data.Items.length;
+            for(var i=0; i<todoCount; i++){
+                todos += data.Items[i]['todo-id'].S;
+                if (i == todoCount - 2){
+                    todos += " and "
+                }
+                else if (i != todoCount - 1){
+                    todos += ", "
+                }
+            }
+            callback({}, buildSpeechletResponse(intent.name, todos, null, false));
+        }
+    });
 }
 
 /**
