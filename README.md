@@ -20,21 +20,21 @@ Objective: Be able to play Duck Duck Goose, Peekaboo, or Marco Polo
     - Function Setup
         - In a web browser, go to: https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions
         - In the top right corner, click the orange button that says *Create Function*
-        <img src="https://github.com/innovaasta/hear-me/blob/master/images/1.png" width="500px"/>
+        - <img src="https://github.com/innovaasta/hear-me/blob/master/images/1.png" width="700px"/>
         - Click Blueprints, then search for *Alexa*, and click on *alexa-skills-kit-color-expert-python* for Python or *alexa-skills-kit-color-expert* for Node.JS
-        <img src="https://github.com/innovaasta/hear-me/blob/master/images/2.png" width="500px"/>
+        - <img src="https://github.com/innovaasta/hear-me/blob/master/images/2.png" width="700px"/>
         - In the *Basic Information* section, name your function gameSkill, and for Role, select *Create new role from template(s)*, enter *alexaSkill* for Role Name, and from Policy templates list, select *Simple Microservice permissions*
-        <img src="https://github.com/innovaasta/hear-me/blob/master/images/5.png" width="500px"/>
+        - <img src="https://github.com/innovaasta/hear-me/blob/master/images/5.png" width="700px"/>
         - In the *Alexa Skills Kit trigger* section, click Disable
-        <img src="https://github.com/innovaasta/hear-me/blob/master/images/6.png" width="500px"/>
+        - <img src="https://github.com/innovaasta/hear-me/blob/master/images/6.png" width="700px"/>
         - In the bottom right corner, click *Create Function*
-        <img src="https://github.com/innovaasta/hear-me/blob/master/images/7.png" width="500px"/>
+        - <img src="https://github.com/innovaasta/hear-me/blob/master/images/7.png" width="700px"/>
     - Function Coding
         - You can edit all of your function code in the browser-based development environment
         - Copy the ARN from the top right corner - you will need this for the skill creation section
-        <img src="https://github.com/innovaasta/hear-me/blob/master/images/8.png" width="500px"/>
+        - <img src="https://github.com/innovaasta/hear-me/blob/master/images/8.png" width="700px"/>
         - Try to experiment and write some of the code on your own - a fully working reference is available in this repo in [python](https://github.com/innovaasta/hear-me/blob/master/gameSkill.py) and [Node.js](https://github.com/innovaasta/hear-me/blob/master/gameSkill.js)
-        <img src="https://github.com/innovaasta/hear-me/blob/master/images/9.png" width="500px"/>
+        - <img src="https://github.com/innovaasta/hear-me/blob/master/images/9.png" width="700px"/>
 2. Via the Amazon Developer Portal, create a skill called kidsGames
     - Skill Setup
         - In a web browser, go to: https://developer.amazon.com/alexa/console/ask
