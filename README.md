@@ -8,9 +8,9 @@ Hear me helps bring your voice assistant idea to life. You can create an Alexa s
 - [Amazon Developer Portal Account](https://developer.amazon.com/)
 
 ## This kit contains:
-- Example game Alexa skill
-- Example poem reading Alexa skill (call a web service example)
-- Example to-do note Alexa skill (store data example)
+- [Example game Alexa skill](#Game-Alexa-Skill)
+- [Example poem reading Alexa skill (call a web service example)](#Poem-Reading-Alexa-skill)
+- [Example to-do note Alexa skill (store data example)](#Save-to-do-notes-Alexa-skill)
 
 ## Key concepts
 - Alexa skills are built in two components: code called a function and configuration called the skill
@@ -102,7 +102,7 @@ Objective: Be able to play Duck Duck Goose, Peekaboo, or Marco Polo
         - <img src="https://github.com/innovaasta/hear-me/blob/master/images/24.png" width="700px"/>
         - <img src="https://github.com/innovaasta/hear-me/blob/master/images/23.png" width="700px"/>
 
-### Poem Reading Alexa skill (call a web service example)
+### Poem Reading Alexa skill
 Objective: Be able to call a web service and read a poem
 1. Via the Amazon Web Services Console, create a lambda function called poemSkill in python or Node.JS
     - Function Setup
@@ -159,7 +159,7 @@ Objective: Be able to call a web service and read a poem
         - Sometimes Alexa has a hard time interpreting what you're saying, in which case you may need to repeat the same line again
         - If you encounter an error, take a look at the *Monitoring* tab in the AWS console for your function, then click *View logs in CloudWatch*, then click on the most recent log stream, then you can click any arrow to expand the logic that ran to get hints on where you might try to debug your issues
 
-### Save to-do notes Alexa skill (store data example)
+### Save to-do notes Alexa skill
 Objective: Be able to store to-do notes in a database and read back all to-dos
 1. Via the Amazon Web Services Console, create a DynamoDB table called todos
     - In a web browser, go to: https://console.aws.amazon.com/dynamodb/home?region=us-east-1
