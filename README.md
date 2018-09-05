@@ -12,6 +12,17 @@ Hear me helps bring your voice assistant idea to life. You can create an Alexa s
 - Example poem reading Alexa skill (call a web service example)
 - Example to-do note Alexa skill (store data example)
 
+## Key concepts
+- Alexa skills are built in two components: code called a function and configuration called the skill
+- Alexa skill configurations are made up of intents and slots
+    - Intents are the phrases that state the action the person wants to do
+        - play a game
+        - read a poem
+        - save a todo
+    - Slots are the nouns or phrases that a person is selecting to modify or detail the action
+        - buy milk
+        - Alaska
+
 ## Getting started
 Basic Alexa skill development behavior is having two tabs open at a time: one with AWS lambda function and one with the developer portal Alexa configuration and testing.
 ### Game Alexa skill
