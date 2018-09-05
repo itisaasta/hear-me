@@ -10,8 +10,17 @@ Hear me helps bring your voice assistant idea to life. You can create an Alexa s
 ## This kit contains:
 - Example skill templates in [python](baseSkill.py) and [Node.JS](baseSkill.js) that can be used to start any skill and add your own custom code to them
 - [Example game Alexa skill](#game-alexa-skill)
+    - Alexa, kids games
+         - play duck duck
+         - play peek a boo
+         - play marco
 - [Example poem reading Alexa skill (call a web service example)](#poem-reading-alexa-skill)
+    - Alexa, dickinson poems
+         - dickinson poems read me a poem
 - [Example to-do note Alexa skill (store data example)](#save-to-do-notes-alexa-skill)
+    - Alexa, million things
+         - save my thing to get done "buy milk"
+         - what are my things to get done
 
 ## Key concepts
 - Alexa skills are built in two components: code called a function and configuration called the skill
