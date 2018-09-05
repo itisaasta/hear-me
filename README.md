@@ -8,6 +8,7 @@ Hear me helps bring your voice assistant idea to life. You can create an Alexa s
 - [Amazon Developer Portal Account](https://developer.amazon.com/)
 
 ## This kit contains:
+- Example skill templates in [python](baseSkill.py) and [Node.JS](baseSkill.js) that can be used to start any skill and add your own custom code to them
 - [Example game Alexa skill](#game-alexa-skill)
 - [Example poem reading Alexa skill (call a web service example)](#poem-reading-alexa-skill)
 - [Example to-do note Alexa skill (store data example)](#save-to-do-notes-alexa-skill)
